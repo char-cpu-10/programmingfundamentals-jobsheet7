@@ -3,8 +3,11 @@ import java.util.Scanner;
 public class SiakadFor16 {
     public static void main(String[] args) {
     Scanner sc = new Scanner (System.in);
-    double score, highest = 0, lowest = 100;
-
+    double score = 0;
+    double highest = 0;
+    double lowest = 100;
+    int passed = 0;
+    int failed = 0;
     for (int i = 1; i <= 10; i++) {
         System.out.print("Enter score for student " + i + ": ");
         score = sc.nextDouble();
@@ -14,9 +17,18 @@ public class SiakadFor16 {
         if (score < lowest){
             lowest = score;
         }
+        if (score >= 60) {
+            passed++;
+        } else {
+            failed++;
+        }
+        
     }
+
     System.out.println("Highest score: " + highest);
     System.out.println("Lowest score: " + lowest);
+    System.out.println("Total student who passed: " + passed);
+    System.out.println("Total student who failed: " + failed);
     sc.close();
     }
 }
